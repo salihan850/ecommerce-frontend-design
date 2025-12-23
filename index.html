@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Ecommerce - Precise Replica</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-blue: #0D6EFD;
+            --gray-bg: #F7FAFC;
+            --footer-bg: #EFF2F4;
+            --border-color: #E3E8EE;
+            --text-main: #1C1C1C;
+            --text-muted: #8B96A5;
+            --text-footer-bottom: #606060; 
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--gray-bg);
+            color: var(--text-main);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* --- HEADER SECTION --- */
+        header { 
+            background: #fff; 
+            border-bottom: 1px solid var(--border-color); 
+        }
+
+        .header-top { 
+            padding: 20px 0; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+        }
+
+        .logo { 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+            color: #8CB7F5; 
+            font-size: 24px; 
+            font-weight: 700; 
+            text-decoration: none; 
+        }
+
+        .logo i {
+            color: white; 
+            background: var(--primary-blue); 
+            padding: 8px; 
+            border-radius: 8px;
+            font-size: 18px;
+        }
+
+        /* Search Bar: Height kept at 44px with Blue Separator */
+        .search-bar { 
+            display: flex; 
+            flex: 1; 
+            max-width: 660px; 
+            margin: 0 40px; 
+            border: 2px solid var(--primary-blue); 
+            border-radius: 8px; 
+            overflow: hidden;
+            height: 35px; 
+        }
+
+        .search-bar input { 
+            flex: 1; 
+            border: none; 
+            padding: 0 15px; 
+            outline: none; 
+            font-size: 16px;
+        }
+
+        .search-bar select {
+            border: none;
+            border-left: 2px solid var(--primary-blue); 
+            padding: 0 15px;
+            background: white;
+            cursor: pointer;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .btn-search { 
+            background: var(--primary-blue); 
+            color: white; 
+            border: none; 
+            padding: 0 25px; 
+            cursor: pointer; 
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        .header-icons { display: flex; gap: 20px; }
+
+        .icon-item { 
+            text-align: center; 
+            color: var(--text-muted); 
+            font-size: 12px; 
+            text-decoration: none; 
+            min-width: 50px;
+        }
+
+        .icon-item i { 
+            font-size: 19px; 
+            display: block; 
+            margin-bottom: 5px; 
+            color: var(--text-muted);
+        }
+
+        /* Secondary Nav Bar */
+        .nav-bottom {
+            border-top: 1px solid var(--border-color);
+            padding: 15px 0;
+        }
+
+        .nav-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Nav Links: Removed Bold, kept size 16px */
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            font-weight: 400; /* Normal weight */
+            font-size: 16px;
+        }
+
+        .nav-links li {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Settings: Removed Bold, kept size 16px */
+        .nav-settings {
+            display: flex;
+            gap: 25px;
+            font-weight: 400; /* Normal weight */
+            font-size: 16px; 
+        }
+
+        .nav-settings div {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        .flag-de {
+            width: 22px;
+            height: 15px;
+            background: linear-gradient(#000 33.3%, #f00 33.3%, #f00 66.6%, #ff0 66.6%);
+            border-radius: 2px;
+        }
+
+     
+        .breadcrumb-bar {
+            padding: 20px 0;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .result-info-bar {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+       
+        footer { background: #fff; margin-top: 40px; }
+        .newsletter { background: #EEEEEE; padding: 40px 0; text-align: center; }
+        .newsletter h3 { font-size: 20px; font-weight: 500; margin-bottom: 5px; }
+        .newsletter p { color: #606060; margin-bottom: 20px; font-size: 14px; }
+        .subscribe-box { display: flex; justify-content: center; position: relative; max-width: 400px; margin: 0 auto; }
+        .input-wrapper { position: relative; flex: 1; }
+        .input-wrapper i { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted); }
+        .subscribe-box input { width: 100%; padding: 10px 10px 10px 35px; border: 1px solid var(--border-color); border-radius: 6px 0 0 6px; outline: none; }
+        .btn-sub { background: var(--primary-blue); color: white; border: none; padding: 10px 20px; border-radius: 0 6px 6px 0; font-weight: 500; cursor: pointer; }
+        .footer-main { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1.5fr; padding: 40px 0; gap: 10px; }
+        .footer-col h4 { margin-bottom: 15px; font-size: 16px; font-weight: 500; color: var(--text-main); }
+        .footer-col a { display: block; text-decoration: none; color: var(--text-muted); margin-bottom: 8px; font-size: 14px; }
+        .footer-brand p { color: var(--text-footer-bottom); font-size: 14px; line-height: 1.5; margin: 15px 0; width: 80%; }
+        .social-links { display: flex; gap: 10px; }
+        .social-links i { background: #BDC4CD; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; }
+        .app-btn { background: #000; color: white; padding: 8px 12px; border-radius: 6px; display: flex; align-items: center; gap: 8px; text-decoration: none; margin-bottom: 8px; width: fit-content; }
+        .app-btn i { font-size: 18px; }
+        .app-btn span { font-size: 12px; line-height: 1.2; text-align: left; }
+        .footer-bottom { background: var(--footer-bg); padding: 20px 0; border-top: 1px solid var(--border-color); }
+        .bottom-content { display: flex; justify-content: space-between; align-items: center; color: var(--text-footer-bottom); font-size: 14px; }
+        .lang-select { display: flex; align-items: center; gap: 8px; color: #505050; cursor: pointer; }
+        .flag-icon { width: 20px; height: 14px; background: url('https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg') no-repeat center; background-size: cover; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-top">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-bag-shopping"></i> Brand
+            </a>
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+                <select>
+                    <option>All category</option>
+                </select>
+                <button class="btn-search">Search</button>
+            </div>
+            <div class="header-icons">
+                <a href="#" class="icon-item"><i class="fa-solid fa-user"></i>Profile</a>
+                <a href="#" class="icon-item"><i class="fa-solid fa-message"></i>Message</a>
+                <a href="#" class="icon-item"><i class="fa-solid fa-heart"></i>Orders</a>
+                <a href="#" class="icon-item"><i class="fa-solid fa-cart-shopping"></i>My cart</a>
+            </div>
+        </div>
+
+        <div class="nav-bottom">
+            <div class="container nav-flex">
+                <ul class="nav-links">
+                    <li><i class="fa-solid fa-bars"></i> All category</li>
+                    <li>Hot offers</li>
+                    <li>Gift boxes</li>
+                    <li>Projects</li>
+                    <li>Menu item</li>
+                    <li>Help <i class="fa-solid fa-chevron-down" style="font-size: 12px;"></i></li>
+                </ul>
+                <div class="nav-settings">
+                    <div>English, USD <i class="fa-solid fa-chevron-down" style="font-size: 12px;"></i></div>
+                    <div>Ship to <div class="flag-de"></div> <i class="fa-solid fa-chevron-down" style="font-size: 12px;"></i></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="breadcrumb-bar">
+            Home &nbsp; <i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i> &nbsp; 
+            Clothings &nbsp; <i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i> &nbsp; 
+            Men's wear &nbsp; <i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i> &nbsp; 
+            Summer clothing
+        </div>
+
+        <div class="result-info-bar">
+            <div>12,911 items in <b>Mobile accessory</b></div>
+            <div style="display: flex; gap: 15px; align-items: center;">
+                <label style="display: flex; gap: 8px; align-items: center; cursor: pointer;">
+                    <input type="checkbox" checked style="accent-color: var(--primary-blue);"> Verified only
+                </label>
+                <select style="padding: 5px 10px; border: 1px solid var(--border-color); border-radius: 4px;">
+                    <option>Featured</option>
+                </select>
+                <div style="display: flex; border: 1px solid var(--border-color); border-radius: 4px; overflow: hidden;">
+                    <div style="padding: 5px 10px; background: white; border-right: 1px solid var(--border-color);"><i class="fa-solid fa-grip"></i></div>
+                    <div style="padding: 5px 10px; background: #EFF2F4;"><i class="fa-solid fa-list"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <section class="newsletter">
+            <div class="container">
+                <h3>Subscribe on our newsletter</h3>
+                <p>Get daily news on upcoming offers from many suppliers all over the world</p>
+                <div class="subscribe-box">
+                    <div class="input-wrapper">
+                        <i class="fa-regular fa-envelope"></i>
+                        <input type="email" placeholder="Email">
+                    </div>
+                    <button class="btn-sub">Subscribe</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="container footer-main">
+            <div class="footer-brand">
+                <div class="logo" style="font-size: 20px;">
+                    <i class="fa-solid fa-bag-shopping" style="color:white; background: #0D6EFD; padding: 4px; border-radius: 4px; font-size: 12px;"></i> Brand
+                </div>
+                <p>Best information about the company gies here but now lorem ipsum is</p>
+                <div class="social-links">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-linkedin-in"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>About</h4>
+                <a href="#">About Us</a>
+                <a href="#">Find store</a>
+                <a href="#">Categories</a>
+                <a href="#">Blogs</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Partnership</h4>
+                <a href="#">About Us</a>
+                <a href="#">Find store</a>
+                <a href="#">Categories</a>
+                <a href="#">Blogs</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Information</h4>
+                <a href="#">Help Center</a>
+                <a href="#">Money Refund</a>
+                <a href="#">Shipping</a>
+                <a href="#">Contact us</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>For users</h4>
+                <a href="#">Login</a>
+                <a href="#">Register</a>
+                <a href="#">Settings</a>
+                <a href="#">My Orders</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Get app</h4>
+                <a href="#" class="app-btn">
+                    <i class="fa-brands fa-apple"></i>
+                    <span>Download on the<br><b>App Store</b></span>
+                </a>
+                <a href="#" class="app-btn">
+                    <i class="fa-brands fa-google-play"></i>
+                    <span>Get it on<br><b>Google Play</b></span>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container bottom-content">
+                <p>© 2023 Ecommerce.</p>
+                <div class="lang-select">
+                    <div class="flag-icon"></div>
+                    <span>English</span>
+                    <i class="fa-solid fa-chevron-up" style="font-size: 10px; color: #8B96A5;"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
